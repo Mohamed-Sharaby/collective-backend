@@ -15,23 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('site.index');
+    $about = \App\Models\About::first();
+    $service = \App\Models\Service::first();
+    $sliders = \App\Models\Slider::all();
+    $experts = \App\Models\Expert::all();
+    return view('site.index', compact('about', 'service', 'sliders','experts'));
 })->name('site.index');
 
 Route::get('/contact', function () {
     return view('site.contact');
 })->name('site.contact');
 
-Route::post('/save', [\App\Http\Controllers\Site\SiteController::class,'save'])->name('site.save');
+Route::post('/save', [\App\Http\Controllers\Site\SiteController::class, 'save'])->name('site-old.save');
 
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
-//
-//Route::middleware('auth')->group(function () {
-//    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-//});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

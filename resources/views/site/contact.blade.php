@@ -1,44 +1,46 @@
 @extends('site.layouts.main')
 
+
 @section('content')
-    <!-- Modal -->
-
-    <!-- end header -->
-    <!-- start banner slider -->
-    <section class="bg-section-gray border-bottom border-color-dark-gray lg-pt-10 xs-pt-30">
-
-
+<!-- Start Content -->
+<div class="content">
+    <section class="contactus-wrap">
         <div class="container">
-            <div class="row g-0">
-                <div class="col-10 col-xl-10 col-lg-9 ">
-                    <h4 class="d-inline-block  text-orange mb-8 ls-minus-1px">Let’s Talk</h4>
-                    <p class="box fs-15">Whether you're looking to innovate, strategize, or simply explore
-                        possibilities, we're here to collaborate. <br><br>Reach out today</p>
-
+            <div class="contactus-content">
+                <h2>CONTACT US</h2>
+                <p>Whether you're looking to innovate, strategize, or simply
+                    explore possibilities, we're here to collaborate. <br>
+                    Reach out today</p>
+                <div class="text-center mr-3 m-3">
                     @include('admin.layouts.status')
-
-                    <form action="{{route('site.save')}}" method="post">
-                        @csrf
-                        <label class="text-dark-gray mb-10px fw-500">Name</label>
-                        <input class="mb-20px bg-very-light-gray form-control required" type="text" name="name">
-                        <label class="text-dark-gray mb-10px fw-500">Email</label>
-                        <input class="mb-20px bg-very-light-gray form-control required" type="email" name="email">
-                        <label class="text-dark-gray mb-10px fw-500">Message</label>
-                        <textarea class="form-control" cols="40" rows="3" name="message"></textarea>
-
-                        <button class="btn btn-large btn-rounded btn-dark-gray btn-box-shadow submit w-100 mb-20px"
-                                style="background-color: #FF644E;" type="submit">Submit
-                        </button>
-
-                        <div class="form-results mt-20px d-none"></div>
-
-                    </form>
-
-
                 </div>
+                <form action="{{route('site-old.save')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" required name="name" value="{{old('name')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" class="form-control" required name="email" value="{{old('email')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Message</label>
+                        <textarea class="form-control" name="message" required>{{old('message')}}</textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
-
+        <div class="contact-btm">
+            <ul>
+                <li><a href="tels:+971507443393">+971507443393</a></li>
+                <li><a href="mailto:hello@collective-25.com">hello@collective-25.com</a></li>
+                <li>P.O.Box 58516 Dubai</li>
+            </ul>
+            <img src="site/images/collective/25-Icon-orange.png" alt="">
+        </div>
     </section>
-
+</div>
+<!-- Start Content -->
 @endsection

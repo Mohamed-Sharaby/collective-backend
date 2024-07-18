@@ -12,17 +12,4 @@ class DashboardController extends Controller
         return view('admin.layouts.main');
     }
 
-
-    public function active($id, $className)
-    {
-        $baseClass = 'App\Models\\' . $className;
-        $model = $baseClass::findOrFail($id);
-        $model->update(['is_active' => !$model->is_active]);
-        return back()->with('success', __('Updated Successfully'));
-    }
-
-
-
-
-
 }

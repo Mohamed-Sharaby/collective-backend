@@ -47,7 +47,8 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Name</th>
-                                            <th>Description</th>
+                                            <th>Email</th>
+                                            <th>Message</th>
                                             <th>Operations</th>
                                         </tr>
                                         </thead>
@@ -55,7 +56,7 @@
                                         <tbody>
                                         @foreach($contacts as $index => $contact)
                                             <tr>
-                                                <td>{{$index +1}}</td>
+                                                <td>{{$contacts->firstItem()+$loop->index}}</td>
                                                 <td>{{$contact->name}}</td>
                                                 <td>{{$contact->email}}</td>
                                                 <td>{{$contact->message}}</td>
@@ -76,7 +77,11 @@
                                     </table>
 
                                 </div>
+                                <ul class="pagination  justify-content-end">
+                                    {{$contacts->links()}}
+                                </ul>
                             </div>
+
                         </div>
                     </div>
                 </div>

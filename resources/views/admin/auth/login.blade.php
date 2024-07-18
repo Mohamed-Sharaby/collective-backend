@@ -4,12 +4,12 @@
 <head>
 
     <meta charset="utf-8"/>
-    <title>NexGame</title>
+    <title>Collective25</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Marsool" name="description"/>
     <meta content="Themesdesign" name="author"/>
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('admin/assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('site/images/collective/logo.png')}}">
     <!-- Bootstrap Css -->
     <link href="{{asset('admin/assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css"/>
     <!-- Icons Css -->
@@ -36,23 +36,15 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="px-2 py-3">
-{{--                                @if ($errors->any())--}}
-{{--                                    <div class="alert alert-danger">--}}
-{{--                                        <ul>--}}
-{{--                                            @foreach ($errors->all() as $error)--}}
-{{--                                                <li>{{ $error }}</li>--}}
-{{--                                            @endforeach--}}
-{{--                                        </ul>--}}
-{{--                                    </div>--}}
-{{--                                @endif--}}
+
                                 <div class="text-center">
-                                    <a href="#">
-                                        <img src="{{asset('admin/assets/images/logo-dark.png')}}" height="22"
-                                             alt="logo">
+                                    <a href="#" >
+                                        <img src="{{asset('site/images/collective/logo.png')}}" height="30"
+                                           style="background-color: black;"  alt="logo">
                                     </a>
 
                                     <h5 class="text-primary mb-2 mt-4">Welcome Back !</h5>
-                                    <p class="text-muted">Sign in to continue to NexGame.</p>
+                                    <p class="text-muted">Sign in to continue to Collective25.</p>
                                     @include('admin.layouts.status')
                                 </div>
 
@@ -63,14 +55,14 @@
                                         <label for="email">Email</label>
                                         <input type="email" class="form-control" id="email" name="email"
                                                placeholder="Enter Email" required>
-                                        <small>Email : admin@admin.com</small>
+                                        <small>Example : admin@admin.com</small>
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="userpassword">Password</label>
                                         <input type="password" class="form-control" id="userpassword" name="password"
                                                placeholder="Enter password" required >
-                                        <small>Pass : 123456</small>
+                                        <small>Example : 123456</small>
                                     </div>
 
                                     <div class="mb-3">
@@ -97,8 +89,8 @@
                     <div class="mt-5 text-center text-white">
                         <p>©
                             <script>document.write(new Date().getFullYear())</script>
-                              Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://www.getnexeon.com/"
-                            style="color: #d8d9e7" target="_blank">Nexeon</a>
+                              Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://www.collective-25.com/"
+                            style="color: #d8d9e7" target="_blank">Collective25</a>
                         </p>
                     </div>
                 </div>

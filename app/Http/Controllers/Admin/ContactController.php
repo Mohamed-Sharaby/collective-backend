@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AdminRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -14,7 +13,7 @@ class ContactController extends Controller
     public function index()
     {
         return view('admin.contacts.index', [
-            'contacts' => Contact::all()
+            'contacts' => Contact::latest()->paginate(10)
         ]);
     }
 
@@ -34,7 +33,7 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return
      */
-    public function store(ColorRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -68,7 +67,7 @@ class ContactController extends Controller
      * @param  int  $id
      * @return
      */
-    public function update(ColorRequest $request, Color $color)
+    public function update(Request $request, $id)
     {
        //
     }

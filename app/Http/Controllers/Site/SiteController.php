@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactEmail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
@@ -16,9 +19,11 @@ class SiteController extends Controller
             'email' => 'required|string|email|max:255',
             'message' => 'required|string'
         ]);
-
-        Contact::create($request->except('_token'));
-     //   return redirect(route('site.contact'))->with('success', 'Message Sent Successfully');
+        DB::beginTransaction();
+        $contact = Contact::create($request->except('_token'));
+        Mail::to('moh.sharaby@yahoo.com')->send(new ContactEmail($contact));
+        Mail::to('hello@collective-25.com')->send(new ContactEmail($contact));
+        DB::commit();
         return redirect()->back()->with('success', 'Message Sent Successfully');
     }
 }

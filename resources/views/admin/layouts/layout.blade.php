@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <title>@yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="NexGame" name="description"/>
+    <meta content="Collective25" name="description"/>
     <meta content="Themesdesign" name="author"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- App favicon -->
@@ -41,12 +41,12 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <script>document.write(new Date().getFullYear())</script>
-                        © <a href="https://www.getnexeon.com/"   target="_blank">Nexeon</a>.
+                        © <a href="https://www.collective-25.com/"   target="_blank">Collective25</a>.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-end d-none d-sm-block">
                             Crafted with <i class="mdi mdi-heart text-danger"></i> by
-                            <a href="https://www.getnexeon.com/"   target="_blank">Nexeon</a>
+                            <a href="https://www.collective-25.com/"   target="_blank">Collective25</a>
                         </div>
                     </div>
                 </div>
