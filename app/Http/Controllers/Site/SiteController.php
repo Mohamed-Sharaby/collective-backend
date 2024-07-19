@@ -21,7 +21,6 @@ class SiteController extends Controller
         ]);
         DB::beginTransaction();
         $contact = Contact::create($request->except('_token'));
-        Mail::to('moh.sharaby@yahoo.com')->send(new ContactEmail($contact));
         Mail::to('hello@collective-25.com')->send(new ContactEmail($contact));
         DB::commit();
         return redirect()->back()->with('success', 'Message Sent Successfully');
